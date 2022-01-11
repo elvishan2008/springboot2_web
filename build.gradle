@@ -4,7 +4,6 @@ buildscript {
     }
     repositories {
         mavenCentral()
-        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -27,7 +26,10 @@ repositories {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
     compileOnly('org.projectlombok:lombok:')
     annotationProcessor('org.projectlombok:lombok')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa:')
+    implementation('com.h2database:h2:') //인메모리 관계형 데이터베이스 (테스트용)
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+
 }

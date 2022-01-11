@@ -21,7 +21,7 @@ public class HelloControllerTest {
     private MockMvc mvc;
 
     @Test
-    public void helloPrintTest() throws Exception{
+    public void helloPrintTest() throws Exception {
         String hello = "hello";
 
         mvc.perform(get("/hello"))
@@ -31,14 +31,14 @@ public class HelloControllerTest {
     }
 
     @Test
-    public void hsyDtoTest() throws Exception{
+    public void hsyDtoTest() throws Exception {
         String name = "HSY";
         int amount = 1000;
 
         mvc.perform(
-                    get("/hello/dto")
-                        .param("name", name)
-                        .param("amount", String.valueOf(amount)))
+                        get("/hello/dto")
+                                .param("name", name)
+                                .param("amount", String.valueOf(amount)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", is(name)))
                 .andExpect(jsonPath("$.amount", is(amount)));
