@@ -31,6 +31,7 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-data-jpa:') //jpa
     implementation('com.h2database:h2:') //인메모리 관계형 데이터베이스 (테스트용)
     implementation('org.springframework.boot:spring-boot-starter-mustache:') //머스테치
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client:') //스프링 시큐리티
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
 }
