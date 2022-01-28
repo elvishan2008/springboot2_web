@@ -34,6 +34,6 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client:') //스프링 시큐리티
     implementation('org.springframework.security:spring-security-test') //스프링 시큐리티 테스트
     implementation('org.springframework.session:spring-session-jdbc')
+    implementation('org.mariadb.jdbc:mariadb-java-client:')//maria db driver
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-
 }
