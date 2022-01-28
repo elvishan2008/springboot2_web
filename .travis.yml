@@ -28,7 +28,6 @@ deploy:
     skip_cleanup: true
     acl: private # zip 파일 접글을 private으로
     local_dir: deploy # befroe_deploy에서 생성한 디렉토리
-    wait-until-deployed: true
 
   - provider: codedeploy
       access_key_id: $AWS_ACCESS_KEY #Travis repo settings EV name, val
@@ -39,7 +38,6 @@ deploy:
       application: magicDobby-toy-01
       deployment_group: magicDobby-toy-01-group
       region: ap-northeast-2
-      wait-until-deployed: true
 
 # CI 실행 완료 시 메일로 알람
 notifications:
