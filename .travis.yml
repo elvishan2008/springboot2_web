@@ -6,8 +6,6 @@ branches:
   only:
     - master
 
-version: ~> 1.0
-
 # Travis CI 서버의 Home
 cache:
   directories:
@@ -21,7 +19,7 @@ before_deploy:
   - mkdir -p deploy
   - mv springboot2_web.zip deploy/
 
-deploys:
+deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY #Travis repo settings EV name, val
     secret_access_key: $AWS_SECRET_KEY #Travis repo settings EV name, val
@@ -33,15 +31,15 @@ deploys:
     wait-until-deployed: true
 
   - provider: codedeploy
-      access_key_id: $AWS_ACCESS_KEY #Travis repo settings EV name, val
-      secret_access_key: $AWS_SECRET_KEY #Travis repo settings EV name, val
-      bucket: magicdobby-toy-01-build #AWS S3 bucket
-      key: springboot2_web.zip # send build file
-      bundle_type: zip # extension name
-      application: magicDobby-toy-01
-      deployment_group: magicDobby-toy-01-group
-      region: ap-northeast-2
-      wait-until-deployed: true
+    access_key_id: $AWS_ACCESS_KEY #Travis repo settings EV name, val
+    secret_access_key: $AWS_SECRET_KEY #Travis repo settings EV name, val
+    bucket: magicdobby-toy-01-build #AWS S3 bucket
+    key: springboot2_web.zip # send build file
+    bundle_type: zip # extension name
+    application: magicDobby-toy-01
+    deployment_group: magicDobby-toy-01-group
+    region: ap-northeast-2
+    wait-until-deployed: true
 
 # CI 실행 완료 시 메일로 알람
 notifications:
